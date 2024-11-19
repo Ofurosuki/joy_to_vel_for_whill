@@ -31,9 +31,11 @@ class JoyToTwistNode(Node):
 
     def joy_callback(self, joy_msg):
         twist = Twist()
-        twist.linear.x = joy_msg.axes[1] *1200
-        twist.angular.z = -joy_msg.axes[3] *200
+        twist.linear.x = 0
+        twist.angular.z = 0
         self.publisher.publish(twist)
+        #joy_msg.axes[0]  topics /joy
+        #joy_msg.buttons[0] topics /joy
 
 
 def main(args=None):
